@@ -1,0 +1,12 @@
+{
+  "name": "hash-iterator",
+  "version": "1.0.0",
+  "description": "A bruteforce hash iterator. This will produce a 10-character string from two parameters: The salt - an ASCII encoded string, and the number of prefixed zeros - an integer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {}
+}
