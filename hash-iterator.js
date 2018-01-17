@@ -62,7 +62,7 @@ const crypto = require('crypto');
         if (isComplete()) return processResult(salt);
         this.iterations++;
         const hash = createHash(salt + this.iterations);
-        isCorrectPrefix(hash, prefix) ? addCharacter(salt, hash, prefix) : setTimeout(() => tick(salt, prefix), 0);
+        return isCorrectPrefix(hash, prefix) ? addCharacter(salt, hash, prefix) : tick(salt, prefix);
     };
 
     const createHash = (str) => crypto.createHash('md5').update(str).digest('hex');
