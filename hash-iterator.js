@@ -20,8 +20,6 @@ const crypto = require('crypto');
     this.queue = [];
     this.result = [];
 
-    
-
     const addToQueue = (fileName, resultLength = 10, prefixCharacter = '0', initialFillValue = '.', encoding = 'ascii', fileSuffix = '.answer') => {
         console.log('\nAdding file to queue:', path.join(__dirname, fileName));
         this.queue.push( { fileName, resultLength, prefixCharacter, initialFillValue, encoding, fileSuffix } );
@@ -115,6 +113,4 @@ const crypto = require('crypto');
         if (index >= 2) addToQueue(file);
     });
 
-    // module.exports.process = process;
-
-})(module);
+})();
