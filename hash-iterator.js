@@ -1,8 +1,10 @@
+'use strict'
+
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-((module) => {
+(() => {
 
     this.prefixLength;
     this.initialFillValue;
@@ -18,7 +20,9 @@ const crypto = require('crypto');
     this.queue = [];
     this.result = [];
 
-    const process = (fileName, resultLength = 10, prefixCharacter = '0', initialFillValue = '.', encoding = 'ascii', fileSuffix = '.answer') => {
+    
+
+    const addToQueue = (fileName, resultLength = 10, prefixCharacter = '0', initialFillValue = '.', encoding = 'ascii', fileSuffix = '.answer') => {
         console.log('\nAdding file to queue:', path.join(__dirname, fileName));
         this.queue.push( { fileName, resultLength, prefixCharacter, initialFillValue, encoding, fileSuffix } );
         if (!this.processing) {
@@ -107,6 +111,10 @@ const crypto = require('crypto');
 
     const isCorrectPrefix = (hash, prefix) => hash.startsWith(prefix);
 
-    module.exports.process = process;
+    process.argv.forEach((file, index, array) => {
+        if (index >= 2) addToQueue(file);
+    });
+
+    // module.exports.process = process;
 
 })(module);
