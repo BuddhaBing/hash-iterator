@@ -67,7 +67,7 @@ const crypto = require('crypto');
     const addCharacter = (salt, hash, prefix) => {
         const position = hash[this.prefixLength];
         if (isNaN(position)) return tick(salt, prefix);
-        const index = this.iterations % 32;
+        const index = this.iterations % hash.length;
         const char = hash[index];
         if (this.result[position] === this.currentFile.initialFillValue) { 
             this.result[position] = char;
