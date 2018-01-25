@@ -57,7 +57,6 @@ const crypto = require('crypto');
     };
 
     const tick = (salt, prefix) => {
-        if (isComplete()) return processResult(salt);
         this.iterations++;
         const hash = createHash(salt + this.iterations);
         return isCorrectPrefix(hash, prefix) ? addCharacter(salt, hash, prefix) : tick(salt, prefix);
@@ -76,7 +75,7 @@ const crypto = require('crypto');
             console.log('\nFound character: ', char);
             console.log('Characters remaining: ', this.currentFile.resultLength - this.charactersFound);
         }
-        tick(salt, prefix);
+        isComplete() ? processResult(salt) : tick(salt, prefix);
     };
 
     const isComplete = () => this.charactersFound == this.currentFile.resultLength;
