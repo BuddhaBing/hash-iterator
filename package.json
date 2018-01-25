@@ -1,0 +1,19 @@
+{
+  "name": "hash-iterator",
+  "version": "1.0.0",
+  "description": "The task is to create a bruteforce [hash](https://en.wikipedia.org/wiki/Hash_function) iterator. This will produce a 10-character string from two parameters:  - The salt, an ASCII encoded string  - The number of prefixed zeros, an integer",
+  "main": "hash-iterator.js",
+  "scripts": {
+    "start": "node --harmony hash-iterator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/treborb/hash-iterator.git"
+  },
+  "author": "Rob Brentnall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/treborb/hash-iterator/issues"
+  },
+  "homepage": "https://github.com/treborb/hash-iterator#readme"
+}

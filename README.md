@@ -53,5 +53,5 @@ There are example input and output files provided for each problem, which you ca
 ```
 $ git clone https://github.com/treborb/hash-iterator.git
 $ cd hash-iterator
-$ node --harmony hash-iterator.js input/hash-1.txt input/hash-2.txt input/hash-3.txt
+$ npm start input/hash-1.txt input/hash-2.txt input/hash-3.txt
 ```
