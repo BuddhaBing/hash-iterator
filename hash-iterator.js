@@ -7,10 +7,6 @@ const crypto = require('crypto');
 (() => {
 
     this.prefixLength;
-    this.initialFillValue;
-    this.resultLength;
-    this.prefixCharacter;
-    this.encoding;
     this.fileSuffix;
     this.currentFile;
     this.charactersFound;
@@ -109,7 +105,7 @@ const crypto = require('crypto');
 
     const isCorrectPrefix = (hash, prefix) => hash.startsWith(prefix);
 
-    process.argv.forEach((file, index, array) => {
+    process.argv.forEach((file, index) => {
         if (index >= 2) addToQueue(file);
     });
 
